@@ -1,9 +1,5 @@
 package example
 
-import scala.io.StdIn
-
-import com.typesafe.config.{Config, ConfigFactory}
-
 // Lancer l'exemple avec: sbt "runMain example.Hello"
 // TODO: a supprimer
 object Hello extends Greeting with App {

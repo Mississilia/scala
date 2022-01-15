@@ -90,7 +90,7 @@ object Runner {
       if (position.x >= 0 && position.x < Limits.x && position.y >= 0 && position.y < Limits.y) {
         getMowersInit(
           Mowers.appended(
-            getInstructions(MowerInit(position, direction))
+            getInstructions(InitMower(position, direction))
           ),
           Limits
         )
@@ -108,7 +108,7 @@ object Runner {
     }
   }
 
-  def getInstructions(Mower: MowerInit): MowerInstructions = {
+  def getInstructions(Mower: InitMower): MowerInstructions = {
     println("Entrer maintenant les instructions sous la forme IIIIIIIII :")
     println("Rappel, G: pivote a gauche, D: pivote a droite, A: avance")
     val input = scala.io.StdIn.readLine()
@@ -117,7 +117,7 @@ object Runner {
 
   def checkInstructionsInput(
                               chars: Array[Char],
-                              Mower: MowerInit
+                              Mower: InitMower
                             ): MowerInstructions = {
     val validChars: List[Char] = List('A', 'G', 'D')
     val instructions

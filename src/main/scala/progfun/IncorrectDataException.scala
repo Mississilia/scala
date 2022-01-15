@@ -1,3 +1,5 @@
+package progfun
+
 trait IncorrectDataException {
   def print(): Unit
 }
@@ -28,3 +30,4 @@ case class IllegalDirectionException(message: String)
     println("ERROR: " + message)
   }
 }
+
