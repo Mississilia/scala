@@ -3,7 +3,7 @@ package progfun
 object Runner {
   def getLimits(): Limits = {
     println(
-      "Entrez les Limits du jardin sous la forme \"X Y\" ou X et Y sont des nombres entiers plus grands que 0 :"
+      "Entrez les limites du jardin sous la forme \"X Y\" ou X et Y sont des nombres entiers plus grands que 0 :"
     )
     val ipt: String = scala.io.StdIn.readLine()
     stringsToLimits(ipt)
@@ -33,7 +33,7 @@ object Runner {
                         Limits: Limits
                       ): List[MowerInstructions] = {
     println(
-      "Entrez la position initiale de la prochaine Mower (comprise dans les Limits) ainsi que sa direction (N,S,E,O)"
+      "Entrez la position initiale de la prochaine tondeuse (comprise dans les limites) ainsi que sa direction (N,S,E,O)"
     )
     println(
       "ou entrez \"result\" pour avoir le resultat final, \"exit\" pour quitter"
@@ -96,7 +96,7 @@ object Runner {
         )
       } else {
         OutOfLimitsException(
-          "Coordonnees de depart de la Mower hors limite !"
+          "Coordonnees de depart de la tondeuse hors limite !"
         ).print()
         getMowersInit(Mowers, Limits)
       }
@@ -127,7 +127,7 @@ object Runner {
         IllegalDirectionException("Des directions ne sont pas valides").print()
         getInstructions(Mower)
       case Droite =>
-        IllegalDirectionException("Une directions n'est pas valide").print()
+        IllegalDirectionException("Une direction n'est pas valide").print()
         getInstructions(Mower)
       case Avance =>
         MowerInstructions(
